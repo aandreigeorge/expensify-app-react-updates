@@ -4,10 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import configureStore from './store/configureStore';
 import AppRouter, { history } from './routers/AppRouter';
-import { startSetExpenses, clearExpensesAfterLogout } from './actions/expenses';
-import { login, logout } from './actions/auth';
 import { Provider } from 'react-redux';
+import { startSetExpenses, clearExpensesAfterLogout } from './actions/expenses';
 import { googleAuth } from './firebase/firebase';
+import { login, logout } from './actions/auth';
 
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
@@ -19,6 +19,7 @@ const jsx = (
         <AppRouter/>
     </Provider>
 );
+
 const renderApp = () => {
     if(!hasRendered) {
         root.render(jsx);
