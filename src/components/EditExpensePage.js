@@ -8,8 +8,8 @@ import { history } from '../routers/AppRouter';
 
 
 const EditExpensePage = () => {
-    const dispatch = useDispatch();
     const {id} = useParams();
+    const dispatch = useDispatch();
     const expenses = useSelector(state => state.expenses);
     const expense = expenses.find((expense) => expense.id === id);
     const [modalVisibility, setModalVisibility] = useState(false);
