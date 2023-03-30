@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import configureStore from './store/configureStore';
 import AppRouter, { history } from './routers/AppRouter';
+import LoadingPage from './components/LoadingPage';
 import { Provider } from 'react-redux';
 import { startSetExpenses, clearExpensesAfterLogout } from './actions/expenses';
 import { googleAuth } from './firebase/firebase';
@@ -19,6 +20,8 @@ const jsx = (
         <AppRouter/>
     </Provider>
 );
+
+root.render(<LoadingPage />);
 
 const renderApp = () => {
     if(!hasRendered) {
