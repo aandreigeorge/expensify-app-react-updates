@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import ExpenseForm from './ExpenseForm';
 import ConfirmationModal from './ConfirmationModal';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
+import { history } from '../routers/AppRouter';
 
 
 const EditExpensePage = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const {id} = useParams();
     const expenses = useSelector(state => state.expenses);
     const expense = expenses.find((expense) => expense.id === id);
@@ -27,7 +27,7 @@ const EditExpensePage = () => {
                     expense={expense}
                     onSubmit={(expense) => {
                         dispatch(startEditExpense(id, expense));
-                        navigate('/dashboard');
+                        history.push('/dashboard')
                     }}
                 />
                 <button 
@@ -40,7 +40,7 @@ const EditExpensePage = () => {
                     expenseData={expense}
                     deleteExpense={() => {
                         dispatch(startRemoveExpense({id}));
-                        navigate('/dashboard')
+                        history.push('/dashboard')
                     }}
                 />
             </div>
