@@ -84,7 +84,7 @@ class EmailSingupPage extends React.Component {
                                 value={this.state.password2}
                                 onChange={this.onPassword2Change}
                             />
-                            <div><button className='button'>Sign Up</button></div>
+                            <div><button className='button button--email'>Sign Up</button></div>
                         </form>
                         <p>Already have an Account? <Link to="/">Log in!</Link></p>
                     </div>
