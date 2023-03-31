@@ -2,6 +2,7 @@ import React from 'react';
 import PrivateRoute from './PrivateRoute'
 import AddExpensePage from '../components/AddExpensePage';
 import EditExpensePage from '../components/EditExpensePage';
+import EmailSingupPage from '../components/EmailSingupPage';
 import ExpenseDashBoardPage from '../components/ExpenseDashboardPage';
 import LoginPage from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
@@ -15,6 +16,7 @@ const AppRouter = () => (
     <HistoryRouter history={history}>
         <Routes>
             <Route path='/' element={<LoginPage/>} />
+            <Route path='/signup' element={<EmailSingupPage/>} />
             <Route path='/dashboard' element={<PrivateRoute> <ExpenseDashBoardPage /> </PrivateRoute>} />
             <Route path='/create' element={<PrivateRoute> <AddExpensePage /> </PrivateRoute>} />
             <Route path='/edit/:id' element={<PrivateRoute> <EditExpensePage /> </PrivateRoute>} />

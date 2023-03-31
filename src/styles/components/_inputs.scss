@@ -7,6 +7,10 @@
     border-radius: 3px;
 }
 
+.text-input--small-bottom-margin {
+	margin-bottom: 3px !important;
+}
+
 .select {
     @extend .text-input;
    
@@ -15,6 +19,11 @@
 .textarea {
     @extend .text-input;
     height: 10rem;
-   
+}
 
+.input--grey-focus:focus {				
+	outline: none !important;
+	border: 2px solid $grey;
+    font-size: $font-size-medium;
+	
 }

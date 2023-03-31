@@ -40,7 +40,7 @@ const EditExpensePage = () => {
                     expenseData={expense}
                     deleteExpense={() => {
                         dispatch(startRemoveExpense({id}));
-                        history.push('/dashboard')
+                        history.push('/dashboard');
                     }}
                 />
             </div>

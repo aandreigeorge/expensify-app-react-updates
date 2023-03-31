@@ -7,7 +7,6 @@ import numeral from 'numeral';
 Modal.setAppElement('#app');
 
 const ConfirmationModal = ( {isOpen, closeModal, deleteExpense, expenseData} ) => (
-
     <Modal
         isOpen={isOpen}
         contentLabel='Are you sure you want to delete this expense?'

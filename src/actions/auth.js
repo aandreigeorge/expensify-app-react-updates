@@ -1,9 +1,22 @@
-import { googleAuth, googleProvider } from "../firebase/firebase";
-import { signInWithPopup } from "firebase/auth";
+import { firebaseAuth, googleProvider } from "../firebase/firebase";
+import { signOut, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
-export const startLogin = () => {
+
+export const startEmailSignup = (email, password) => {
   return () => {
-    return signInWithPopup(googleAuth, googleProvider);
+    return createUserWithEmailAndPassword(firebaseAuth, email, password);
+  }  
+};
+
+export const startEmailLogin = (email, password) => {
+  return () => {
+      return signInWithEmailAndPassword(firebaseAuth, email, password);
+  };
+};
+
+export const startGoogleLogin = () => {
+  return () => {
+    return signInWithPopup(firebaseAuth, googleProvider);
   };
 };
 
@@ -14,7 +27,7 @@ export const login = (uid) => ({
 
 export const startLogout = () => {
   return () => {
-    return googleAuth.signOut();
+    return signOut(firebaseAuth);
   };
 };
 

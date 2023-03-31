@@ -6,7 +6,6 @@ import { history } from '../routers/AppRouter';
 
 
 const AddExpensePage = (props) => {
-    
     return (
         <div>
             <div className='page-header'>

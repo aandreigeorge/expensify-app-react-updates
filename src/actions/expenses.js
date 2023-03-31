@@ -14,7 +14,6 @@ export const startSetExpenses = () => {
                     ...childSnapshot.val()
                 });
             });
-
             dispatch(setExpenses(expenses));
         }, { onlyOnce: true }); 
     };

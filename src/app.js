@@ -7,7 +7,7 @@ import AppRouter, { history } from './routers/AppRouter';
 import LoadingPage from './components/LoadingPage';
 import { Provider } from 'react-redux';
 import { startSetExpenses, clearExpensesAfterLogout } from './actions/expenses';
-import { googleAuth } from './firebase/firebase';
+import { firebaseAuth } from './firebase/firebase';
 import { login, logout } from './actions/auth';
 
 
@@ -30,7 +30,7 @@ const renderApp = () => {
     }
 };
 
-googleAuth.onAuthStateChanged((user) => {
+firebaseAuth.onAuthStateChanged((user) => {
     if(user) {
         store.dispatch(login(user.uid));
         store.dispatch(startSetExpenses());

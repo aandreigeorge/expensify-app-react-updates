@@ -22,25 +22,21 @@ export default class ExpenseForm extends React.Component {
         const description = e.target.value;
         this.setState(() => ( {description} ));
     };
-
     onNoteChange = (e) => {
         const note = e.target.value;
         this.setState(() => ( {note} ));
     };
-
     onAmountChange = (e) => {
         const amount = e.target.value;
         if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
             this.setState(() => ( {amount} ));
         }
     };
-
     onDateChange = (createdAt) => {
         if(createdAt) {
             this.setState(() => ( {createdAt} ));
         } 
     };
-
     onFocusChange = ( {focused} ) => {
         this.setState(() => ( {calendarFocused: focused} ));
     };
@@ -100,7 +96,7 @@ export default class ExpenseForm extends React.Component {
                 </div>
             </form>    
 
-        )
+        );
     }
-};
+}
 
