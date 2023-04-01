@@ -86,7 +86,7 @@ class EmailSingupPage extends React.Component {
                             />
                             <div><button className='button button--email'>Sign Up</button></div>
                         </form>
-                        <p>Already have an Account? <Link to="/">Log in!</Link></p>
+                        <p>Already have an account? <Link to="/">Log in!</Link></p>
                     </div>
                 </div>
             </div>

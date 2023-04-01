@@ -22,7 +22,6 @@ class LogInPage extends React.Component {
         const password = e.target.value;
         this.setState( {password} );
     };
-
     onSubmit = (e) => {
         e.preventDefault();
         if(!this.state.email || !this.state.password) {
