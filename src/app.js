@@ -8,7 +8,7 @@ import LoadingPage from './components/LoadingPage';
 import { Provider } from 'react-redux';
 import { startSetExpenses, clearExpensesAfterLogout } from './actions/expenses';
 import { firebaseAuth } from './firebase/firebase';
-import { login, logout } from './actions/auth';
+import { login, logout, setUserProfile } from './actions/auth';
 
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
@@ -34,6 +34,7 @@ firebaseAuth.onAuthStateChanged((user) => {
     if(user) {
         store.dispatch(login(user.uid));
         store.dispatch(startSetExpenses());
+        store.dispatch(setUserProfile(user));
         renderApp();
         if (history.location.pathname === '/') {
             history.push('/dashboard');
@@ -45,3 +46,4 @@ firebaseAuth.onAuthStateChanged((user) => {
         history.push('/');  
     }
 });
+

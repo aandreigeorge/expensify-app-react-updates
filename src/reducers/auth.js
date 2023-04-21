@@ -7,7 +7,14 @@ const authenticationReducer = (state = authenticationReducerDefaultState, action
             return {
                 uid: action.uid
             };
-        
+            
+        case 'SET_USER_PROFILE':
+            return {
+                ...state,
+                displayName: action.displayName,
+                email: action.email,
+                photoURL: action.email
+            };
         case 'LOGOUT': 
             return {};
 

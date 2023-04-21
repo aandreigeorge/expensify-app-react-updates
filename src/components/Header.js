@@ -1,7 +1,6 @@
 import React from 'react';
+import UserMenu from './UserMenu';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { startLogout } from '../actions/auth';
 
 
 const Header = (props) => (
@@ -11,12 +10,12 @@ const Header = (props) => (
                     <Link className='header__title' to='/dashboard'>
                         <h1>Expensify</h1>
                     </Link>
-                    <button className='button button--link' onClick={props.dispatch(startLogout)}>Logout</button>
+                    <UserMenu />
                 </div>        
             </div>
         </header>
 );
 
-export default connect()(Header);
+export default Header;
 
 

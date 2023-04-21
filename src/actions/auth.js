@@ -25,6 +25,13 @@ export const login = (uid) => ({
   uid,
 });
 
+export const setUserProfile = ( {displayName, email, photoURL} ) => ({
+  type: 'SET_USER_PROFILE',
+  displayName,
+  email,
+  photoURL
+});
+
 export const startLogout = () => {
   return () => {
     return signOut(firebaseAuth);
