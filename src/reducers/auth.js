@@ -13,7 +13,7 @@ const authenticationReducer = (state = authenticationReducerDefaultState, action
                 ...state,
                 displayName: action.displayName,
                 email: action.email,
-                photoURL: action.email
+                photoURL: action.photoURL
             };
         case 'LOGOUT': 
             return {};
